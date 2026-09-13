@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index>
+  <info>
+    <update version="1.0.0">
+      <file name="myhomebrew.index" url="https://githubusercontent.com" />
+    </update>
+  </info>
+  <files>
+    <file name="oath_of_eternity.xml" url="https://githubusercontent.com" />
+  </files>
+</index>
