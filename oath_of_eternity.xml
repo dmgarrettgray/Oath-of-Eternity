@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Oath of Eternity</name>
+        <description>The Oath of Eternity sacred oath for the Paladin class.</description>
+        <author url="https://jaylon-homebrew.fandom.com/wiki/Paladin_Oaths_(5e)">Homebrew Wiki</author>
+        <update version="1.0.0">
+            <file name="oath_of_eternity.xml" url="YOUR_HOSTED_URL_HERE/oath_of_eternity.xml" />
+        </update>
+    </info>
+
+    <!-- Subclass Archetype Definition -->
+    <element name="Oath of Eternity" type="Archetype" id="ID_HOMEBREW_ARCHETYPE_PALADIN_OATH_OF_ETERNITY" source="Homebrew">
+        <supports>Sacred Oath</supports>
+        <description>
+            <p>The oath of Eternity is a solemn calling and one that very few paladins get the opportunity to pursue. Paladins of this oath are sometimes called Immortals or White Liches, a direct reference to the most striking feature of this oath: the gift and curse of immortality and servitude. Those who take this oath are the most dedicated and zealous protectors of divine orders, sacred places, and objects of power. So great is their desire to preserve the sanctity of their charge that they are called to eternal service in its name, to protect it beyond the shadow of death against whatever the grim future may bring.</p>
+            <h5>Tenets of Eternity</h5>
+            <p>The tenets of the Oath of Eternity are as ancient as those who uphold them, emphasizing the solemn nature of a life sacrificed in the name of wardenship.</p>
+            <p><strong>Duty is paramount.</strong> Your every action should be measured by its benefit to your charge. Your goals and ideals will never trump the importance of your duty.</p>
+            <p><strong>Preserve your charge.</strong> Nothing of importance is without enemies. You must strike down those who would bring harm to your charge without hesitation or mercy.</p>
+            <p><strong>Look forward, not back.</strong> The past is immutable, but the future is ever changing, unpredictable, and full of danger. You must not be distracted by the past, so you can be prepared for whatever lies ahead.</p>
+            <p><strong>Be thankful for your lot.</strong> Few are chosen to perform the duty you are entrusted with. Revel in your fortune, and never doubt your choice to take up this mantle, for it is the highest honor and most important duty one could achieve.</p>
+            <div class="sidebar">
+                <p><strong>OATH OF ETERNITY SPELLS</strong></p>
+                <table>
+                    <thead>
+                        <tr><td>Paladin Level</td><td>Spells</td></tr>
+                    </thead>
+                    <tr><td>3rd</td><td><em>false life, sanctuary</em></td></tr>
+                    <tr><td>5th</td><td><em>detect thoughts, shadow blade</em></td></tr>
+                    <tr><td>9th</td><td><em>feign death, vampiric touch</em></td></tr>
+                    <tr><td>13th</td><td><em>death ward, Mordenkainen’s private sanctum</em></td></tr>
+                    <tr><td>17th</td><td><em>dispel evil and good, hallow</em></td></tr>
+                </table>
+            </div>
+        </description>
+        <sheet display="false" />
+        <rules>
+            <!-- Granting Oath Spells automatically by level -->
+            <grant type="Spell" id="ID_PHB_SPELL_FALSE_LIFE" level="3" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" level="5" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_XGTE_SPELL_SHADOW_BLADE" level="5" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_FEIGN_DEATH" level="9" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_VAMPIRIC_TOUCH" level="9" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_DEATH_WARD" level="13" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_MORDENKAINENS_PRIVATE_SANCTUM" level="13" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD" level="17" spellcasting="Paladin" prepared="true" />
+            <grant type="Spell" id="ID_PHB_SPELL_HALLOW" level="17" spellcasting="Paladin" prepared="true" />
+
+            <!-- Subclass Features -->
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CHANNEL_DIVINITY" level="3" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_AURA_OF_PRESERVATION" level="7" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_TIMELESS_IMMORTAL" level="15" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_UNDYING_CHAMPION" level="20" />
+        </rules>
+    </element>
+
+    <!-- Level 3: Channel Divinity Options -->
+    <element name="Channel Divinity: Oath of Eternity" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CHANNEL_DIVINITY" source="Homebrew">
+        <description>
+            <p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
+            <p class="indent"><strong>Immortal Protector.</strong> As a bonus action, you present your holy symbol and reaffirm your eternal service. Once during the next minute, if you are reduced to 0 or fewer HP, you immediately regain a number of hit points equal to your paladin level.</p>
+            <p class="indent"><strong>Declare Charge.</strong> As an action, you present your holy symbol and declare a creature or object as part of your charge. For the next minute, as long as you remain within 5 feet of that creature or object, it has resistance to all damage and you take damage equal to the damage dealt to the creature or object.</p>
+        </description>
+        <sheet>
+            <description>You can use your Channel Divinity to fuel Immortal Protector or Declare Charge.</description>
+        </sheet>
+        <rules>
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CD_IMMORTAL_PROTECTOR" />
+            <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CD_DECLARE_CHARGE" />
+        </rules>
+    </element>
+
+    <element name="Channel Divinity: Immortal Protector" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CD_IMMORTAL_PROTECTOR" source="Homebrew">
+        <compendium display="false"/>
+        <sheet action="Bonus Action" usage="Channel Divinity">
+            <description>Once during the next minute, if you are reduced to 0 or fewer HP, you immediately regain {{paladin:level}} hit points.</description>
+        </sheet>
+    </element>
+
+    <element name="Channel Divinity: Declare Charge" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CD_DECLARE_CHARGE" source="Homebrew">
+        <compendium display="false"/>
+        <sheet action="Action" usage="Channel Divinity">
+            <description>Declare a creature or object within 5 feet. For 1 minute, it has resistance to all damage and you take damage equal to the damage dealt to it.</description>
+        </sheet>
+    </element>
+
+    <!-- Level 7: Aura of Preservation -->
+    <element name="Aura of Preservation" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_AURA_OF_PRESERVATION" source="Homebrew">
+        <description>
+            <p>Beginning at 7th level, you emanate an aura as long as you are conscious. When you or a creature within 10 feet of you takes damage, you may use your reaction to reduce the damage they take by an amount equal to your Charisma modifier. At 18th level, this becomes 30 ft.</p>
+        </description>
+        <sheet action="Reaction">
+            <description override="When you or a creature within {{aura:preservation:range}} feet takes damage, reduce it by {{charisma:modifier}}.</description>
+        </sheet>
+        <rules>
+            <!-- Modifies aura size automatically at Level 18 -->
+            <value name="aura:preservation:range" value="10" bonus="base"/>
+            <value name="aura:preservation:range" value="30" bonus="base" level="18"/>
+        </rules>
+    </element>
+
+    <!-- Level 15: Timeless Immortal -->
+    <element name="Timeless Immortal" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_TIMELESS_IMMORTAL" source="Homebrew">
+        <description>
+            <p>By 15th level, you have proven yourself worthy to carry the torch of your charge into the future. You cease aging and become immune to any effects that would cause you to age. You no longer need food or water to survive and are immune to disease, poison damage, and the poisoned condition.</p>
+        </description>
+        <sheet>
+            <description>You cease aging and cannot be aged magically. You do not require food or water.</description>
+        </sheet>
+        <rules>
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_IMMUNITY_DISEASE" />
+            <grant type="Condition" id="ID_INTERNAL_CONDITION_IMMUNITY_POISONED" />
+            <grant type="Damage Resistance" id="ID_INTERNAL_DAMAGE_IMMUNITY_POISON" />
+        </rules>
+    </element>
+
+    <!-- Level 20: Undying Champion -->
+    <element name="Undying Champion" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_UNDYING_CHAMPION" source="Homebrew">
+        <description>
+            <p>At 20th level, you have transcended mortality. You can use your action to gain the following benefits for 1 hour:</p>
+            <ul>
+                <li>Critical hits against you are considered normal hits.</li>
