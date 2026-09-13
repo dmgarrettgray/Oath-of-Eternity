@@ -3,7 +3,7 @@
     <info>
         <name>Oath of Eternity</name>
         <description>The Oath of Eternity sacred oath for the Paladin class.</description>
-        <author url="https://fandom.com">Homebrew Wiki</author>
+        <author url="https://jaylon-homebrew.fandom.com/wiki/Paladin_Oaths_(5e)">Homebrew Wiki</author>
         <update version="1.0.0">
             <file name="oath_of_eternity.xml" url="https://githubusercontent.com" />
         </update>
@@ -11,7 +11,6 @@
 
     <!-- Subclass Archetype Definition -->
     <element name="Oath of Eternity" type="Archetype" id="ID_HOMEBREW_ARCHETYPE_PALADIN_OATH_OF_ETERNITY" source="Homebrew">
-        <!-- FIXED: Tells Aurora exactly to bind this to the Paladin's level 3 selection screen -->
         <supports>Paladin Archetype</supports>
         <description>
             <p>The oath of Eternity is a solemn calling and one that very few paladins get the opportunity to pursue. Paladins of this oath are sometimes called Immortals or White Liches, a direct reference to the most striking feature of this oath: the gift and curse of immortality and servitude. Those who take this oath are the most dedicated and zealous protectors of divine orders, sacred places, and objects of power. So great is their desire to preserve the sanctity of their charge that they are called to eternal service in its name, to protect it beyond the shadow of death against whatever the grim future may bring.</p>
@@ -37,6 +36,7 @@
         </description>
         <sheet display="false" />
         <rules>
+            <!-- Core Spell Progression Hooks -->
             <grant type="Spell" id="ID_PHB_SPELL_FALSE_LIFE" level="3" spellcasting="Paladin" prepared="true" />
             <grant type="Spell" id="ID_PHB_SPELL_SANCTUARY" level="3" spellcasting="Paladin" prepared="true" />
             <grant type="Spell" id="ID_PHB_SPELL_DETECT_THOUGHTS" level="5" spellcasting="Paladin" prepared="true" />
@@ -48,6 +48,7 @@
             <grant type="Spell" id="ID_PHB_SPELL_DISPEL_EVIL_AND_GOOD" level="17" spellcasting="Paladin" prepared="true" />
             <grant type="Spell" id="ID_PHB_SPELL_HALLOW" level="17" spellcasting="Paladin" prepared="true" />
 
+            <!-- Core Feature Milestones -->
             <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CHANNEL_DIVINITY" level="3" />
             <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_AURA_OF_PRESERVATION" level="7" />
             <grant type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_TIMELESS_IMMORTAL" level="15" />
@@ -55,11 +56,10 @@
         </rules>
     </element>
 
+    <!-- Channel Divinity Wrapper -->
     <element name="Channel Divinity: Oath of Eternity" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CHANNEL_DIVINITY" source="Homebrew">
         <description>
             <p>When you take this oath at 3rd level, you gain the following two Channel Divinity options.</p>
-            <p class="indent"><strong>Immortal Protector.</strong> As a bonus action, you present your holy symbol and reaffirm your eternal service. Once during the next minute, if you are reduced to 0 or fewer HP, you immediately regain a number of hit points equal to your paladin level.</p>
-            <p class="indent"><strong>Declare Charge.</strong> As an action, you present your holy symbol and declare a creature or object as part of your charge. For the next minute, as long as you remain within 5 feet of that creature or object, it has resistance to all damage and you take damage equal to the damage dealt to the creature or object.</p>
         </description>
         <sheet>
             <description>You can use your Channel Divinity to fuel Immortal Protector or Declare Charge.</description>
@@ -73,7 +73,7 @@
     <element name="Channel Divinity: Immortal Protector" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_CD_IMMORTAL_PROTECTOR" source="Homebrew">
         <compendium display="false"/>
         <sheet action="Bonus Action" usage="Channel Divinity">
-            <description>Once during the next minute, if you are reduced to 0 or fewer HP, you immediately regain {{paladin:level}} hit points.</description>
+            <description>Once during the next minute, if you are reduced to 0 or fewer HP, you immediately regain hit points equal to your Paladin level.</description>
         </sheet>
     </element>
 
@@ -84,12 +84,13 @@
         </sheet>
     </element>
 
+    <!-- Aura of Preservation -->
     <element name="Aura of Preservation" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_AURA_OF_PRESERVATION" source="Homebrew">
         <description>
             <p>Beginning at 7th level, you emanate an aura as long as you are conscious. When you or a creature within 10 feet of you takes damage, you may use your reaction to reduce the damage they take by an amount equal to your Charisma modifier. At 18th level, this becomes 30 ft.</p>
         </description>
         <sheet action="Reaction">
-            <description>When you or a creature within aura range takes damage, use a reaction to reduce it by your Charisma modifier.</description>
+            <description>When you or a creature within your aura takes damage, reduce it by your Charisma modifier.</description>
         </sheet>
         <rules>
             <value name="aura:preservation:range" value="10" bonus="base"/>
@@ -97,6 +98,7 @@
         </rules>
     </element>
 
+    <!-- Timeless Immortal -->
     <element name="Timeless Immortal" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_TIMELESS_IMMORTAL" source="Homebrew">
         <description>
             <p>By 15th level, you have proven yourself worthy to carry the torch of your charge into the future. You cease aging and become immune to any effects that would cause you to age. You no longer need food or water to survive and are immune to disease, poison damage, and the poisoned condition.</p>
@@ -111,8 +113,13 @@
         </rules>
     </element>
 
+    <!-- Undying Champion -->
     <element name="Undying Champion" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_UNDYING_CHAMPION" source="Homebrew">
         <description>
             <p>At 20th level, you have transcended mortality. You can use your action to gain the following benefits for 1 hour: Critical hits count as normal hits. At 0 HP, make a Charisma save (DC 10 or half damage) to stay at 1 HP and take 1 exhaustion level instead. If killed, return via True Resurrection in 1d10 days if your charge survives. Re-use early by expending a 5th-level spell slot.</p>
         </description>
         <sheet action="Action" usage="1/Long Rest">
+            <description>Gain critical hit immunity, a Charisma save to avoid dropping to 0 HP, and delayed auto-resurrection for 1 hour.</description>
+        </sheet>
+    </element>
+</elements>
