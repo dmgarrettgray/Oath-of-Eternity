@@ -119,6 +119,3 @@
     <!-- Level 20: Undying Champion -->
     <element name="Undying Champion" type="Archetype Feature" id="ID_HOMEBREW_ARCHETYPE_FEATURE_ETERNITY_UNDYING_CHAMPION" source="Homebrew">
         <description>
-            <p>At 20th level, you have transcended mortality. You can use your action to gain the following benefits for 1 hour:</p>
-            <ul>
-                <li>Critical hits against you are considered normal hits.</li>
