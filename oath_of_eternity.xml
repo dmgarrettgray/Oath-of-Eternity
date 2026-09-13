@@ -3,9 +3,9 @@
     <info>
         <name>Oath of Eternity</name>
         <description>The Oath of Eternity sacred oath for the Paladin class.</description>
-        <author url="https://jaylon-homebrew.fandom.com/wiki/Paladin_Oaths_(5e)">Homebrew Wiki</author>
+        <author url="https://fandom.com">Homebrew Wiki</author>
         <update version="1.0.0">
-            <file name="oath_of_eternity.xml" url="YOUR_HOSTED_URL_HERE/oath_of_eternity.xml" />
+            <file name="oath_of_eternity.xml" url="https://githubusercontent.com" />
         </update>
     </info>
 
@@ -92,7 +92,7 @@
             <p>Beginning at 7th level, you emanate an aura as long as you are conscious. When you or a creature within 10 feet of you takes damage, you may use your reaction to reduce the damage they take by an amount equal to your Charisma modifier. At 18th level, this becomes 30 ft.</p>
         </description>
         <sheet action="Reaction">
-            <description override="When you or a creature within {{aura:preservation:range}} feet takes damage, reduce it by {{charisma:modifier}}.</description>
+            <description>When you or a creature within aura range takes damage, use a reaction to reduce it by your Charisma modifier.</description>
         </sheet>
         <rules>
             <!-- Modifies aura size automatically at Level 18 -->
